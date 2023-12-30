@@ -17,10 +17,17 @@ export const SocketProvider = (props) => {
 
     //!Viewing Socket, only connection is not Stablished.
     //! To Stablish connection call api/socket.js
-    console.log("Socket Connection", connection);
+    console.log("Socket Connection:", connection);
 
     setSocket(connection);
   }, []);
 
-  return <SocketContext.Provider>{children}</SocketContext.Provider>;
+  socket?.on("connect_error:", async (err) => {
+    console.log("Error establishing socket:", err);
+    await fetch("/api/socket");
+  });
+
+  return (
+    <SocketContext.Provider value={socket}>{children}</SocketContext.Provider>
+  );
 };
