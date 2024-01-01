@@ -1,10 +1,10 @@
 import { useSocket } from "@/context/socket";
 import { useEffect } from "react";
-// import usePeer from "@/hooks/usePeer";
+import usePeer from "@/hook/peer";
 
 export default function Home() {
   const socket = useSocket();
-  // usePeer();
+  usePeer();
 
   useEffect(() => {
     socket?.on("connect", () => {
