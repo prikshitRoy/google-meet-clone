@@ -22,8 +22,8 @@ export const SocketProvider = (props) => {
     setSocket(connection);
   }, []);
 
-  socket?.on("connect_error:", async (err) => {
-    console.log("Error establishing socket:", err);
+  socket?.on("connect_error", async (err) => {
+    console.log("Error establishing socket", err);
     await fetch("/api/socket");
   });
 
