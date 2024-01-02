@@ -31,7 +31,7 @@ export default function Home() {
         <button onClick={joinRoom}>Join Room</button>
       </div>
       <span className={styles.separatorText}>
-        -------------- OR -------------------
+        -------------- OR --------------
       </span>
       <button onClick={createAndJoin}>Create a new Room</button>
     </div>
