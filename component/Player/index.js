@@ -17,7 +17,7 @@ const Player = (props) => {
         url={url}
         muted={muted}
         playing={playing}
-        width="1oo%"
+        width="100%"
         height="100%"
       />
     </div>
